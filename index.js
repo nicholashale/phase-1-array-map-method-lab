@@ -11,6 +11,15 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+const makeTitleCaseWord = word => word.charAt(0).toUpperCase() + word.slice(1);
+
+const makeTitleCasePhrase = phrase => phrase.split(' ').map(element => makeTitleCaseWord(element)).join(' ');
+
+const makeTitleCaseArray = phrases => phrases.map(element => makeTitleCasePhrase(element));
+
+
 const titleCased = () => {
-  return tutorials
+
+  return makeTitleCaseArray(tutorials);
+
 }
